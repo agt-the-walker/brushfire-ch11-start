@@ -19,7 +19,7 @@ module.exports.bootstrap = function(cb) {
   // `TEST_USERS` is an array of test users 
   var TEST_USERS = [{
     email: 'sailsinaction@gmail.com',
-    username: 'sails-in-action',
+    username: 'sailsinaction',
     password: 'abc123',
     admin: true
   }, {
