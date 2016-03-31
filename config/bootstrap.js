@@ -24,7 +24,7 @@ module.exports.bootstrap = function(cb) {
     admin: true
   }, {
     email: 'nikolateslaidol@gmail.com',
-    username: 'nikola-tesla',
+    username: 'nikolatesla',
     password: 'abc123',
     admin: false
   }];

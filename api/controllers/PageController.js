@@ -1040,7 +1040,7 @@ module.exports = {
       created: '2 minutes ago',
       gravatarURL: 'http://www.gravatar.com/avatar/ef3eac6c71fdf24b13db12d8ff8d1264'
     }, {
-      username: 'nikola-tesla',
+      username: 'nikolatesla',
       message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare.',
       created: '2 minutes ago',
       gravatarURL: 'http://www.gravatar.com/avatar/c06112bbecd8a290a00441bf181a24d3?'
@@ -1050,7 +1050,7 @@ module.exports = {
       created: '2 minutes ago',
       gravatarURL: 'http://www.gravatar.com/avatar/ef3eac6c71fdf24b13db12d8ff8d1264'
     }, {
-      username: 'nikola-tesla',
+      username: 'nikolatesla',
       message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare.',
       created: '2 minutes ago',
       gravatarURL: 'http://www.gravatar.com/avatar/c06112bbecd8a290a00441bf181a24d3?'
@@ -1060,7 +1060,7 @@ module.exports = {
       created: '2 minutes ago',
       gravatarURL: 'http://www.gravatar.com/avatar/ef3eac6c71fdf24b13db12d8ff8d1264'
     }, {
-      username: 'nikola-tesla',
+      username: 'nikolatesla',
       message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare.',
       created: '2 minutes ago',
       gravatarURL: 'http://www.gravatar.com/avatar/c06112bbecd8a290a00441bf181a24d3?'
@@ -1070,7 +1070,7 @@ module.exports = {
       created: '2 minutes ago',
       gravatarURL: 'http://www.gravatar.com/avatar/ef3eac6c71fdf24b13db12d8ff8d1264'
     }, {
-      username: 'nikola-tesla',
+      username: 'nikolatesla',
       message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare.',
       created: '2 minutes ago',
       gravatarURL: 'http://www.gravatar.com/avatar/c06112bbecd8a290a00441bf181a24d3?'
