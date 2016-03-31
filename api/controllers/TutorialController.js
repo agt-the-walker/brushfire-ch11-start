@@ -12,7 +12,7 @@ module.exports = {
     var tutorials = [{
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 1,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -20,7 +20,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 2,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -28,7 +28,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 3,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -36,7 +36,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 4,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -44,7 +44,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 5,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -52,7 +52,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 6,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -60,7 +60,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 7,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -68,7 +68,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 8,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -76,7 +76,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 9,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -84,7 +84,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 10,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -107,7 +107,7 @@ module.exports = {
     var tutorials = [{
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 1,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -115,7 +115,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 2,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -123,7 +123,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 3,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -131,7 +131,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 4,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -139,7 +139,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 5,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -147,7 +147,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 6,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -155,7 +155,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 7,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -163,7 +163,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 8,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -171,7 +171,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 9,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
@@ -179,7 +179,7 @@ module.exports = {
     }, {
       title: 'The best of Douglas Crockford on JavaScript.',
       description: 'Understanding JavaScript the good parts, and more.',
-      owner: 'sails-in-action',
+      owner: 'sailsinaction',
       id: 10,
       created: 'a month ago',
       totalTime: '3h 22m 23s',
