@@ -41,11 +41,11 @@ module.exports = {
         success: function() {
 
           if (createdUser.deleted) {
-            return res.forbidden("'Your our account has been deleted.  Please visit http://brushfire.io/restore to restore your account.'");
+            return res.forbidden("'Your account has been deleted.  Please visit http://brushfire.io/restore to restore your account.'");
           }
 
           if (createdUser.banned) {
-            return res.forbidden("'Your our account has been banned, most likely for adding dog videos in violation of the Terms of Service.  Please contact Chad or his mother.'");
+            return res.forbidden("'Your account has been banned, most likely for adding dog videos in violation of the Terms of Service.  Please contact Chad or his mother.'");
           }
 
           req.session.userId = createdUser.id;
