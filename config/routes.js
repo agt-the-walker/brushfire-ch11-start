@@ -47,7 +47,7 @@ module.exports.routes = {
   /*************************************************************
   * Server Rendered HTML Page Endpoints                        *
   *************************************************************/
-  
+
   'GET /profile/followers': 'PageController.profileFollower',
 
 
@@ -59,9 +59,9 @@ module.exports.routes = {
   'GET /administration': 'PageController.administration',
 
   'GET /password-recovery-email': 'PageController.passwordRecoveryEmail',
-  'GET /password-recovery-email-sent': 'PageController.passwordRecoveryEmailSent',  
+  'GET /password-recovery-email-sent': 'PageController.passwordRecoveryEmailSent',
   'GET /password-reset-form/:passwordRecoveryToken': 'PageController.passwordReset',
-  
+
   'GET /tutorials/search': 'TutorialController.searchTutorials',
   'GET /tutorials/browse': 'PageController.showBrowsePage',
   'GET /tutorials/new': 'PageController.newTutorial',
@@ -73,11 +73,9 @@ module.exports.routes = {
 
   'GET /:username/followers': 'PageController.profileFollower',
   'GET /:username/following': 'PageController.profileFollowing',
-  'GET /:username': 'PageController.profile',
-  
-  // 'GET /:username': {
-  //   controller: 'PageController',
-  //   action: 'profile',
-  //   skipAssets: true
-  // }
+  'GET /:username': {
+    controller: 'PageController',
+    action: 'profile',
+    skipAssets: true
+  }
 };
