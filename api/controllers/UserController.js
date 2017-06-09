@@ -214,7 +214,7 @@ module.exports = {
       // Generate random alphanumeric string for the passwordRecoveryToken
       try {
 
-        var randomString = Strings.unique({}).execSync();
+        var randomString = Strings.random({}).execSync();
 
       } catch (err) {
         return res.serverError(err);
@@ -493,7 +493,7 @@ module.exports = {
   },
 
   follow: function(req, res) {
-    
+
     // Find the user that owns the tutorial
     User.findOne({
       username: req.param('username'),
@@ -510,7 +510,7 @@ module.exports = {
         return res.forbidden();
       }
 
-      // Add the currently authenticated user-agent (user) as 
+      // Add the currently authenticated user-agent (user) as
       // a follower of owner of the tutorial
       foundUser.followers.add(req.session.userId);
       foundUser.save(function (err){
@@ -538,7 +538,7 @@ module.exports = {
   },
 
   unFollow: function(req, res) {
-    
+
     // Find the user that owns the tutorial
     User.findOne({
       username: req.param('username'),
@@ -549,7 +549,7 @@ module.exports = {
       if (err) return res.negotiate(err);
       if (!user) return res.notFound();
 
-      // Remove the currently authenticated user-agent (user) as 
+      // Remove the currently authenticated user-agent (user) as
       // a follower of owner of the tutorial
       user.followers.remove(req.session.userId);
       user.save(function (err){
