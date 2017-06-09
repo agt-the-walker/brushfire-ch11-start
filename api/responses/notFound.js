@@ -49,7 +49,16 @@ module.exports = function notFound (data, options) {
   // If it was omitted, use an empty object (`{}`)
   options = (typeof options === 'string') ? { view: options } : options || {};
 
-  function afterwards(err,loggedInUser) {
+  (function ifThenFinally (cb){
+    if (!req.session.userId) {
+      return cb();
+    }
+
+    User.findOne({ id: req.session.userId }).exec(function(err,user){
+      if (err) return cb(err);
+      return cb(null, user);
+    });
+  })(function afterwards(err,loggedInUser){
     if (err) { return res.serverError(err); }
 
     var me;
@@ -97,14 +106,5 @@ module.exports = function notFound (data, options) {
       }
       return res.send(html);
     });
-  }
-
-  if (!req.session.userId) {
-    return afterwards();
-  }
-
-  User.findOne({ id: req.session.userId }).exec(function(err,user){
-    if (err) return afterwards(err);
-    return afterwards(null, user);
   });
 };
