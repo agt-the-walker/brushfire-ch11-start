@@ -891,7 +891,9 @@ module.exports = {
   editTutorial: function(req, res) {
     Tutorial.findOne({
       id: +req.param('id')
-    }).exec(function (err, foundTutorial){
+    })
+    .populate('owner')
+    .exec(function (err, foundTutorial){
       if (err) return res.negotiate(err);
       if (!foundTutorial) return res.notFound();
 
