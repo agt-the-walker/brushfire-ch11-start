@@ -751,7 +751,7 @@ module.exports = {
 
   tutorialDetail: function(req, res) {
 
-    // Fake tutorials detail dictionary 
+    // Fake tutorials detail dictionary
     var foundTutorial = {
       id: 1,
       title: 'The best of Douglas Crockford on JavaScript.',
@@ -889,37 +889,40 @@ module.exports = {
   },
 
   editTutorial: function(req, res) {
+    Tutorial.findOne({
+      id: +req.param('id')
+    }).exec(function (err, foundTutorial){
+      if (err) return res.negotiate(err);
+      if (!foundTutorial) return res.notFound();
 
-    // Fake tutorials detail dictionary 
-    var tutorial = {
-      title: 'The best of Douglas Crockford on JavaScript.',
-      description: 'Understanding JavaScript the good parts, and more.',
-      id: 1
-    };
-
-    User.findOne({
-      id: +req.session.userId
-    }).exec(function (err, foundUser) {
-      if (err) {
-        return res.negotiate(err);
-      }
-
-      if (!foundUser) {
-        sails.log.verbose('Session refers to a user who no longer exists- did you delete a user, then try to refresh the page with an open tab logged-in as that user?');
-        return res.redirect('/tutorials');
-      }
-
-      return res.view('tutorials-detail-edit', {
-        me: {
-          gravatarURL: foundUser.gravatarURL,
-          username: foundUser.username,
-          admin: foundUser.admin
-        },
-        tutorial: {
-          id: tutorial.id,
-          title: tutorial.title,
-          description: tutorial.description,
+      User.findOne({
+        id: +req.session.userId
+      }).exec(function (err, foundUser) {
+        if (err) {
+          return res.negotiate(err);
         }
+
+        if (!foundUser) {
+          sails.log.verbose('Session refers to a user who no longer exists- did you delete a user, then try to refresh the page with an open tab logged-in as that user?');
+          return res.redirect('/tutorials');
+        }
+
+        if (foundUser.username !== foundTutorial.owner.username) {
+          return res.redirect('/tutorials/'+foundTutorial.id);
+        }
+
+        return res.view('tutorials-detail-edit', {
+          me: {
+            gravatarURL: foundUser.gravatarURL,
+            username: foundUser.username,
+            admin: foundUser.admin
+          },
+          tutorial: {
+            id: foundTutorial.id,
+            title: foundTutorial.title,
+            description: foundTutorial.description,
+          }
+        });
       });
     });
   },
