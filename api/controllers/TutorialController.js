@@ -212,16 +212,54 @@ module.exports = {
   createTutorial: function(req, res) {
 
     // Create a tutorial record using `username`, `title`, and `description`
+    if (!_.isString(req.param('title'))) {
+      return res.badRequest();
+    }
 
-    // Pass back the `id` of the new record, simulate `1` for now.
-    return res.json({id: 1});
+    if (!_.isString(req.param('description'))) {
+      return res.badRequest();
+    }
+
+    User.findOne({
+      id: req.session.userId
+    }).exec(function(err, foundUser){
+      if (err) return res.negotiate;
+      if (!foundUser) return res.notFound();
+
+      Tutorial.create({
+        title: req.param('title'),
+        description: req.param('description'),
+        owner: { username: foundUser.username },
+      }).exec(function(err, createdTutorial){
+        if (err) return res.negotate(err);
+
+        foundUser.tutorials = []
+        foundUser.tutorials.push({
+          title: req.param('title'),
+          description: req.param('description'),
+          created: foundUser.createdAt,
+          updated: foundUser.updatedAt,
+          id: foundUser.id
+        });
+        User.update({
+          id: req.session.userId
+        }, {
+          tutorials: foundUser.tutorials
+        })
+        .exec(function(err){
+          if (err) return res.negotiate(err);
+
+          return res.json({id: createdTutorial.id});
+        });
+      });
+    });
   },
 
   updateTutorial: function(req, res) {
 
     return res.ok();
   },
-  
+
   addVideo: function(req, res) {
 
     return res.ok();
@@ -234,7 +272,7 @@ module.exports = {
   },
 
   deleteTutorial: function(req, res) {
-   
+
     if (!req.session.userId) {
       return res.redirect('/');
     }
@@ -250,7 +288,7 @@ module.exports = {
 
       // Return the username of the user using the userId of the session.
       return res.json({username: foundUser.username});
-      
+
     });
   },
 
