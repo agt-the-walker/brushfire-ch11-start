@@ -230,35 +230,10 @@ module.exports = {
         title: req.param('title'),
         description: req.param('description'),
         owner: foundUser.id,
-        videoOrder: [],
       }).exec(function(err, createdTutorial){
         if (err) return res.negotate(err);
 
-        foundUser.tutorials.add(createdTutorial.id);
-
-        foundUser.save(function (err) {
-          if (err) return res.negotiate(err);
-
-          User.findOne({
-            id: req.session.userId
-          })
-          .populate('tutorials')
-          .exec(function (err, demoUser){
-            if (err) return res.negotiate(err);
-            console.log('demoUser: ', demoUser);
-
-            Tutorial.findOne({
-              id: createdTutorial.id
-            })
-            .populate('owner')
-            .exec(function (err, demoTutorial){
-              if (err) return res.negotiate(err);
-              console.log('demoTutorial: ', demoTutorial);
-
-              return res.json({id: createdTutorial.id});
-            });
-          });
-        });
+        return res.json({id: createdTutorial.id});
       });
     });
   },
