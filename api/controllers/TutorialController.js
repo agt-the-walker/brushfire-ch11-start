@@ -229,27 +229,35 @@ module.exports = {
       Tutorial.create({
         title: req.param('title'),
         description: req.param('description'),
-        owner: { username: foundUser.username },
+        owner: foundUser.id,
+        videoOrder: [],
       }).exec(function(err, createdTutorial){
         if (err) return res.negotate(err);
 
-        foundUser.tutorials = []
-        foundUser.tutorials.push({
-          title: req.param('title'),
-          description: req.param('description'),
-          created: foundUser.createdAt,
-          updated: foundUser.updatedAt,
-          id: foundUser.id
-        });
-        User.update({
-          id: req.session.userId
-        }, {
-          tutorials: foundUser.tutorials
-        })
-        .exec(function(err){
+        foundUser.tutorials.add(createdTutorial.id);
+
+        foundUser.save(function (err) {
           if (err) return res.negotiate(err);
 
-          return res.json({id: createdTutorial.id});
+          User.findOne({
+            id: req.session.userId
+          })
+          .populate('tutorials')
+          .exec(function (err, demoUser){
+            if (err) return res.negotiate(err);
+            console.log('demoUser: ', demoUser);
+
+            Tutorial.findOne({
+              id: createdTutorial.id
+            })
+            .populate('owner')
+            .exec(function (err, demoTutorial){
+              if (err) return res.negotiate(err);
+              console.log('demoTutorial: ', demoTutorial);
+
+              return res.json({id: createdTutorial.id});
+            });
+          });
         });
       });
     });
