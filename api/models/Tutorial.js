@@ -18,14 +18,10 @@ module.exports = {
     },
 
     owner: {
-      type: 'json'
+      model: 'user'
     },
 
-    // owner: {
-    //   model: 'user'
-    // },
-    
-    // An array of video ids representing the manual (human) ordering of videos. 
+    // An array of video ids representing the manual (human) ordering of videos.
     videoOrder: {
       // e.g.
       // [

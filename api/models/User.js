@@ -45,17 +45,12 @@ module.exports = {
     },
 
     tutorials: {
-      type: 'json'
+      collection: 'tutorial',
     },
-
-    // tutorials: {
-    //   collection: 'tutorial',
-    // },
-     
 
     ratings: {
       collection: 'rating',
-      via: 'byUser' 
+      via: 'byUser'
     },
 
     // Who is following me?
