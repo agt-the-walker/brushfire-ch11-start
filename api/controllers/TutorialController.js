@@ -257,7 +257,71 @@ module.exports = {
 
   updateTutorial: function(req, res) {
 
-    return res.ok();
+    if (!_.isString(req.param('title'))) {
+      return res.badRequest();
+    }
+
+    if (!_.isString(req.param('description'))) {
+      return res.badRequest();
+    }
+
+    User.findOne({
+      id: req.session.userId
+    }).exec(function (err, foundUser){
+      if (err) return res.negotiate(err);
+      if (!foundUser) return res.notFound();
+
+      Tutorial.findOne({
+        id: +req.param('id')
+      })
+      .exec(function(err, foundTutorial){
+        if (err) return res.negotiate(err);
+        if (!foundTutorial) return res.notFound();
+
+        if (foundUser.username != foundTutorial.owner.username) {
+          return res.forbidden();
+        }
+
+        Tutorial.update({
+          id: +req.param('id')
+        }, {
+          title: req.param('title'),
+          description: req.param('description')
+        }).exec(function (err) {
+          if (err) return res.negotiate(err);
+
+          User.find().exec(function (err, users) {
+            if (err) { return res.negotiate(err); }
+
+            async.each(users, function (user, next){
+              var cachedTutorial = _.find(user.tutorials, {
+                id: +req.param('id')
+              });
+
+              if (!cachedTutorial) {
+                return next();
+              }
+
+              cachedTutorial.title = req.param('title');
+              cachedTutorial.description = req.param('description');
+
+              User.update({
+                id: user.id
+              }, {
+                tutorials: user.tutorials
+              })
+              .exec(function (err) {
+                if (err) { return next(err); }
+                return next();
+              });
+            }, function (err) {
+              if (err) {return res.negotiate(err);}
+              return res.ok();
+            });
+          });
+        });
+      });
+    });
   },
 
   addVideo: function(req, res) {
