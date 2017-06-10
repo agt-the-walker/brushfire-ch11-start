@@ -761,6 +761,12 @@ module.exports = {
 
       foundTutorial.owner = foundTutorial.owner.username;
 
+      foundTutorial.created = DatetimeService.getTimeAgo({date:
+        foundTutorial.createdAt});
+
+      foundTutorial.updated = DatetimeService.getTimeAgo({date:
+        foundTutorial.updatedAt});
+
       // If not logged in set `me` property to `null` and pass the tutorial to the view
       if (!req.session.userId) {
         return res.view('tutorials-detail', {
